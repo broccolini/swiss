@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<article class="container p2 mx-auto mt2 mb4" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="mb3">{{ site.title }}</h1>
+  <h1 class="h2" itemprop="name headline">{{ page.title }}</h1>
+  <p class="mb3"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+
+  <div class="left quote quote-start">
+    &#8220;
+  </div>
+  <blockquote class="prose" itemprop="articleBody">
+      {{ content }}
+  </blockquote>
+
+  <div class="pt3">
+    <p class="" itemprop="name headline"><a href="{{ page.twitter }}">{{ page.title }}</a>
+      {% if page.bio %}
+        is {{ page.bio }}
+      {% endif %}
+      {% if page.location %}
+        based in {{ page.location }}.
+      {% endif %}
+    </p>
+  </div>
+  <p class="mb2">This quote was taken from <a href="{{ page.design-details-link }}">epidsode {{ page.design-details-ep }}</a> of the Design Details podcast.</p>
+
+</article>
+
+<div class="container p2 mx-auto mb2">
+  <div class="sm-flex border-top">
+    {% if page.previous.url %}
+    <div class="sm-col-6 pt2">
+      <a class="no-underline" href="{{page.previous.url}}">
+        <div class="">
+          <span class="caps"><small>Previous</small></span>
+          <p class="h3 underline">{{page.previous.title}}</p>
+          <p class="mr3">{{ page.previous.content | strip_html | truncatewords:20}}</p>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if page.next.url %}
+    <div class="sm-col-6 pt2">
+      <a class="no-underline" href="{{page.next.url}}">
+        <div class="">
+          <span class="caps"><small>Next</small></span>
+          <p class="h3 underline">{{page.next.title}}</p>
+          <p class="mr3">{{ page.next.content | strip_html | truncatewords:20}}</p>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</div>

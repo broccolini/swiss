@@ -1,8 +1,30 @@
----
-layout: home
----
+<!DOCTYPE html>
+<html>
 
-<header class="bg-black mb-2">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Diana Mounter</title>
+  <meta name="description" content="Web designer and developer with a passion for user centered design, scalable CSS, design facilitation, and team collaboration. Based in Brooklyn, NY.
+">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <link rel="canonical" href="http://example.com/">
+  <link rel="alternate" type="application/rss+xml" title="Diana Mounter" href="http://example.com/feed.xml">
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+
+  <body>
+
+    
+
+    <div>
+      <header class="bg-black mb-2">
 
   <div class="clearfix">
     <ul class="list-reset right py-2 mr-1">
@@ -25,7 +47,8 @@ layout: home
     <h1 class="h0 mt-0 inline-block mb-4 col-9 text-white">Massimo Vignelli</h1>
     <div class="clearfix mb-4">
       <div class="col-4 left border-top-thin py-2">
-        <p class="h4 lh-condensed text-white">{{ site.description }}</p>
+        <p class="h4 lh-condensed text-white">Web designer and developer with a passion for user centered design, scalable CSS, design facilitation, and team collaboration. Based in Brooklyn, NY.
+</p>
       </div>
       <div class="col-4 left border-top-thin py-2 ml-4 text-white table">
         <a href="" title="View on GitHub" class="header-link no-underline">
@@ -52,22 +75,44 @@ layout: home
 
 
 <div class="py-3 border-top-thick">
-  {% for post in site.posts %}
+  
     <div class="container p2 mb3 prose mx-auto">
       <h2 class="">
-        <a class="h2" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a class="h2" href="/jekyll/update/2016/08/05/welcome-to-jekyll.html">Welcome to Jekyll!</a>
       </h2>
-      <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-      <p class="h3">{{ post.content | strip_html | truncatewords:30}}</p>
+      <span>Aug 5, 2016</span>
+      <p class="h3">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways,...</p>
     </div>
-  {% endfor %}
+  
+    <div class="container p2 mb3 prose mx-auto">
+      <h2 class="">
+        <a class="h2" href="/design/details/2015/11/25/potatoes.html">Jessica Harllee</a>
+      </h2>
+      <span>Nov 25, 2015</span>
+      <p class="h3">I’ve been thinking a lot recently about taking care of myself and being a basic human. It’s so easy to throw yourself into work or get caught up in something...</p>
+    </div>
+  
 </div>
 
 <!-- Shows links for pages in the site folder such as about -->
 <div class="container mx-auto">
-  {% for my_page in site.pages %}
-    {% if my_page.title %}
-    <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-    {% endif %}
-  {% endfor %}
+  
+    
+    <a href="/about/">About</a>
+    
+  
+    
+  
+    
+  
+    
+  
 </div>
+
+    </div>
+
+    
+
+  </body>
+
+</html>

@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+During a Live recording of Design Details with Randy Hunt at Etsy, Aaron Moodie asked the question "What keeps you up at night?". Brian Lovin asked many of the following guests on the podcast the same question, and I found it interesting to hear what people at different levels of their career had on their minds.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+This site is a way of sharing what keeps people like you, people who are where you were, and people who might be where you want to be, up at night.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Expanding on the initial collection of quotes from the podcast, I've asked people to write and submit their own answer to "What keeps you up at night?".
+
+<small>Read the guidelines for submission if you'd like to share your own answer.</small>
