@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .prose {
 
   p {
@@ -34,11 +36,15 @@
 }
 
 .header-link {
-  color: #181818;
+  font-family: $sans;
+  font-size: 12px;
   text-decoration: none;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
   &:hover {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none !important;
   }
 }

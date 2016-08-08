@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 /**
   * Reset some basic elements
 */
@@ -28,8 +30,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Athelas", Georgia, serif;
     font-size: 16px;
     line-height: 1.5;
     color: #222;
@@ -41,16 +42,15 @@ a {
 }
 
 
-
-h1 {
-  font-size: 48px;
-  line-height: 1.25;
-
-  @media (min-width: 52em) {
-    font-size: 64px;
-  }
-
-}
+// h1 {
+//   font-size: 48px;
+//   line-height: 1.25;
+//
+//   @media (min-width: 52em) {
+//     font-size: 64px;
+//   }
+//
+// }
 
 p {
   margin-top: 0;
@@ -59,6 +59,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   margin-top: 1em;
   margin-bottom: 0.25em;
 }
@@ -108,6 +109,11 @@ hr {
   text-decoration: none;
 }
 
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Color utilities */
 .bg-black { background-color: #181818; }
 .bg-white { background-color: #fff; }
@@ -115,11 +121,13 @@ hr {
 .bg-blue { background-color: #1372E7; }
 .bg-red { background-color: #e84524; }
 
-.fill-white { fill: white; }
+.fill-white { fill: #fff; }
+.fill-gray { fill: #ccc; }
+.fill-red { fill: #e84524; }
 
-.text-black { color: #111; }
+.text-black { color: #181818; }
 .text-white { color: #fff; }
-.text-gray { color: #666; }
+.text-gray { color: #ccc; }
 .text-blue { color: #1372E7; }
 .text-red { color: #e84524; }
 
@@ -137,6 +145,7 @@ hr {
   z-index: 1;
 }
 
+.border-white { border-color: #fff; }
 .border-gray { border-color: #828282; }
 .border-gray-light { border-color: #ddd; }
 .border-black { border-color: #222; }
