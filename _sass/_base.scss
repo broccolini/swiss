@@ -30,15 +30,11 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-    font-family: "Athelas", Georgia, serif;
+    font-family: $body-font;
     font-size: 16px;
     line-height: 1.5;
     color: #222;
     background-color: #fff;
-}
-
-a {
-  color: inherit;
 }
 
 
@@ -59,7 +55,6 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
-  font-family: "Helvetica Neue", Arial, sans-serif;
   margin-top: 1em;
   margin-bottom: 0.25em;
 }
@@ -73,6 +68,7 @@ h6, .h6 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
@@ -129,7 +125,7 @@ hr {
 .text-white { color: #fff; }
 .text-gray { color: #ccc; }
 .text-blue { color: #1372E7; }
-.text-red { color: #e84524; }
+.text-red { color: $red; }
 
 /* Border utilities */
 .border-bottom-thick { border-bottom: 2px solid; border-color: currentColor; }

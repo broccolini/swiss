@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<header class="bg-black mb-2">
+<header class="bg-black">
 
   <div class="clearfix border-bottom-thick border-white">
     <!-- <ul class="list-reset right py-1 mt-1 mr-2">
@@ -13,10 +13,10 @@ layout: home
         <a class="github-button" href="https://github.com/broccolini/system" data-icon="octicon-star" data-count-href="/broccolini/system/stargazers" data-count-api="/repos/broccolini/system#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star broccolini/system on GitHub">Star</a>
       </li>
     </ul> -->
-    <ul class="list-reset right py-1 mr-2 text-gray">
-      <li class="inline-block mr-2"><a href="{{ }}" class="header-link">Work</a></li>
-      <li class="inline-block mr-2"><a href="{{ }}" class="header-link">Writing</a></li>
-      <li class="inline-block"><a href="{{ }}" class="header-link">About</a></li>
+    <ul class="list-reset right py-1 mr-2 text-red font-smoothing">
+      <li class="inline-block mr-2"><a href="" class="nav-link">Work</a></li>
+      <li class="inline-block mr-2"><a href="" class="nav-link">Writing</a></li>
+      <li class="inline-block"><a href="" class="nav-link">About</a></li>
     </ul>
   </div>
 
@@ -27,12 +27,12 @@ layout: home
       <li class="inline-block"><a class="text-black border-0" href="http://github.com/harrisonford/awesome">View On GitHub</a></li>
     </ul> -->
 
-    <h1 class="h0 mt-0 inline-block mb-3 col-9 text-white">Massimo Vignelli</h1>
-    <div class="clearfix mb-2 py-4">
+    <h1 class="h0 inline-block col-9 mt-3 mb-3 text-white">Massimo Vignelli</h1>
+    <div class="clearfix mb-2 py-3">
       <div class="col-4 left border-top-thin">
 
         <div class="text-white table">
-          <a href="" title="View on GitHub" class="header-link text-black block mt-3">
+          <a href="" title="View on GitHub" class="social-link block mt-3 text-black font-smoothing">
           <div class="table-cell col-1">
             <svg height="32" viewBox="0 0 120 120" version="1.1"  width="32" class="fill-red">
               <circle cx="60" cy="60" r="60"/>
@@ -55,7 +55,7 @@ layout: home
       </div>
 
       <div class="col-4 left border-top-thin ml-4 text-white table">
-        <a href="" title="View on GitHub" class="header-link text-black block mt-3">
+        <a href="" title="View on GitHub" class="social-link block mt-3 text-black font-smoothing">
         <div class="table-cell col-1">
           <svg height="32" viewBox="0 0 120 120" version="1.1"  width="32" class="fill-white">
             <circle cx="60" cy="60" r="60"/>
@@ -78,18 +78,18 @@ layout: home
 
 <div class="py-3">
   {% for post in site.posts %}
-    <div class="container p2 mb3 prose mx-auto">
-      <h2 class="">
-        <a class="h2" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <div class="container-lg py-2 mt-3 mb-4 prose mx-auto">
+      <span class="h5 bold text-red">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h2 class="h1 mt-1 border-top-thick">
+        <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-      <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-      <p class="h3">{{ post.content | strip_html | truncatewords:30}}</p>
+      <p class="">{{ post.content | strip_html | truncatewords:30}}</p>
     </div>
   {% endfor %}
 </div>
 
 <!-- Shows links for pages in the site folder such as about -->
-<div class="container mx-auto">
+<div class="container-lg mx-auto">
   {% for my_page in site.pages %}
     {% if my_page.title %}
     <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>

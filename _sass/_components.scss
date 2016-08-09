@@ -35,13 +35,21 @@
   padding-bottom: 8px;
 }
 
-.header-link {
-  font-family: $sans;
-  font-size: 12px;
+// These link styles will become more custom.
+.social-link {
   text-decoration: none;
+  font-weight: bold;
   line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+
+  &:hover {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.nav-link {
+  line-height: 1;
+  font-weight: bold;
 
   &:hover {
     color: #fff !important;
@@ -65,17 +73,4 @@
 .header-desc-ml {
   // Adjust left margin to line up with heading font
   margin-left: 6px;
-}
-
-.header-hr {
-  background-color: #111;
-  width: 64px;
-  height: 16px;
-}
-
-.border-thick-gray {
-  border-color: #EEF0F0;
-  border-style: solid;
-  border-width: 0 0 20px;
-
 }
