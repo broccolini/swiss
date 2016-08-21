@@ -3,7 +3,7 @@
 .prose {
 
   p {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 
@@ -36,7 +36,7 @@
 }
 
 // These link styles will become more custom.
-.social-link {
+.link-social {
   text-decoration: none;
   font-weight: bold;
   line-height: 1;
@@ -47,13 +47,13 @@
   }
 }
 
-.nav-link {
-  line-height: 1;
+.link-primary {
   font-weight: bold;
+  text-decoration: none;
 
   &:hover {
-    color: #fff !important;
-    text-decoration: none !important;
+    color: $red;
+    text-decoration: none;
   }
 }
 
