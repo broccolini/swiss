@@ -5,34 +5,22 @@ layout: home
 <header class="bg-black">
 
   <div class="clearfix border-bottom-thick border-white">
-    <!-- <ul class="list-reset right py-1 mt-1 mr-2">
-      <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="system">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </li>
-      <li class="inline-block">
-        <a class="github-button" href="https://github.com/broccolini/system" data-icon="octicon-star" data-count-href="/broccolini/system/stargazers" data-count-api="/repos/broccolini/system#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star broccolini/system on GitHub">Star</a>
-      </li>
-    </ul> -->
     <ul class="list-reset right py-1 mr-2 text-white font-smoothing">
-      <li class="inline-block mr-2"><a href="" class="nav-link">Work</a></li>
-      <li class="inline-block mr-2"><a href="" class="nav-link">Writing</a></li>
-      <li class="inline-block"><a href="" class="nav-link">About</a></li>
+      {% for my_page in site.pages %}
+        {% if my_page.title %}
+        <li class="inline-block"><a class="link-primary" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 
   <div class="container-lg mx-auto py-1 mb-2 text-white clearfix">
-    <!-- <ul class="list-reset mt-2 h6 list-header ">
-      <li class="inline-block mr-2"><a class="text-black border-0" href="https://github.com/harrisonford/awesome/zipballmus/master">Download ZIP</a></li>
-      <li class="inline-block mr-2"><a class="text-black border-0" href="https://github.com/harrisonford/awesome/tarball/master">Download TAR</a></li>
-      <li class="inline-block"><a class="text-black border-0" href="http://github.com/harrisonford/awesome">View On GitHub</a></li>
-    </ul> -->
-
-    <h1 class="h0 inline-block col-9 mt-3 mb-3 text-white">Massimo Vignelli</h1>
+    <h1 class="h0 inline-block col-9 mt-3 mb-3 text-white">{{ site.title }}</h1>
     <div class="clearfix mb-2 py-3">
       <div class="col-4 left border-top-thin">
 
         <div class="text-white table">
-          <a href="" title="View on GitHub" class="social-link block mt-3 text-black font-smoothing">
+          <a href="" title="View on GitHub" class="link-social block mt-3 text-black font-smoothing">
           <div class="table-cell col-1">
             {% include blank.html %}
           </div>
@@ -51,7 +39,7 @@ layout: home
       </div>
 
       <div class="col-4 left border-top-thin ml-4 text-white table">
-        <a href="" title="View on GitHub" class="social-link block mt-3 text-black font-smoothing">
+        <a href="" title="View on GitHub" class="link-social block mt-3 text-black font-smoothing">
         <div class="table-cell col-1">
           {% include medium.html %}
         </div>
@@ -60,9 +48,6 @@ layout: home
         </div>
         <span class="table-cell align-middle col-9">View on GitHub</span>
         </a>
-
-        <!-- <p class="h4 lh-condensed mt-3 font-smoothing">Available under MIT license.</p> -->
-
       </div>
     </div>
 
@@ -73,9 +58,9 @@ layout: home
 <div class="py-3">
   {% for post in site.posts %}
     <div class="container-lg py-2 mt-3 mb-4 prose mx-auto">
-      <span class="h5 bold text-red">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
       <h2 class="h1 mt-1 border-top-thick">
-        <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
       <p class="">{{ post.content | strip_html | truncatewords:30}}</p>
     </div>
