@@ -26,6 +26,11 @@
 .col-11 { width: (11 / 12 * 100%); }
 .col-12 { width: 100%; }
 
+@media (max-width: 52em) {
+  .sm-width-full { width: 100% !important; }
+}
+
+
 // Homepage header styles
 
 .h0 { font-size: 128px;
