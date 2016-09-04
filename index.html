@@ -5,19 +5,19 @@ layout: home
 <header class="bg-black">
 
   <div class="clearfix border-bottom-thick border-white">
-    <ul class="list-reset right py-1 mr-2 text-white font-smoothing">
+    <ul class="list-reset right py-1 text-white font-smoothing">
       {% for my_page in site.pages %}
         {% if my_page.title %}
-        <li class="inline-block"><a class="link-primary" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+        <li class="inline-block"><a class="link-primary mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
   </div>
 
-  <div class="container-lg mx-auto py-1 mb-2 text-white clearfix">
-    <h1 class="h0 inline-block col-9 mt-3 mb-3 text-white">{{ site.title }}</h1>
+  <div class="container-lg mx-auto py-1 px-2 mb-2 text-white clearfix">
+    <h1 class="h0 inline-block col-9 sm-width-full mt-3 mb-3 text-white">{{ site.title }}</h1>
     <div class="clearfix mb-2 py-3">
-      <div class="col-4 left border-top-thin">
+      <div class="col-4 sm-width-full left border-top-thin">
 
         <div class="text-white table">
           <a href="" title="View on GitHub" class="link-social block mt-3 text-black font-smoothing">
@@ -38,16 +38,13 @@ layout: home
 
       </div>
 
-      <div class="col-4 left border-top-thin ml-4 text-white table">
-        <a href="" title="View on GitHub" class="link-social block mt-3 text-black font-smoothing">
-        <div class="table-cell col-1">
-          {% include medium.html %}
-        </div>
-        <div class="table-cell col-1 px-1">
-          {% include twitter.html %}
-        </div>
-        <span class="table-cell align-middle col-9">View on GitHub</span>
-        </a>
+      <div class="col-4 sm-width-full left border-top-thin ml-4 text-white table">
+          <div class="inline-block mr-1">
+            {% include dribbble.html %}
+          </div>
+          <div class="inline-block">
+            {% include twitter.html %}
+          </div>
       </div>
     </div>
 
@@ -55,23 +52,14 @@ layout: home
 </header>
 
 
-<div class="py-3">
+<div class="py-3 px-2">
   {% for post in site.posts %}
-    <div class="container-lg py-2 mt-3 mb-4 prose mx-auto">
+    <div class="container-lg py-2 mt-3 mb-3 prose mx-auto">
       <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
-      <h2 class="h1 mt-1 border-top-thick">
+      <h2 class="h1 mt-0">
         <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
       <p class="">{{ post.content | strip_html | truncatewords:30}}</p>
     </div>
-  {% endfor %}
-</div>
-
-<!-- Shows links for pages in the site folder such as about -->
-<div class="container-lg mx-auto">
-  {% for my_page in site.pages %}
-    {% if my_page.title %}
-    <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-    {% endif %}
   {% endfor %}
 </div>
