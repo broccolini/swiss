@@ -239,16 +239,34 @@ hr {
 .mb-4 { margin-bottom: 64px; }
 .ml-4 { margin-left: 64px; }
 
-.header-height {
-  height: 100vh;
-  min-height: 100%;
+// Responsive margin
+@media (min-width: 52em) {
+  .mx-lg-auto { margin-left: auto; margin-right: auto; }
 
-  @media (min-width: 52em) {
-    height: 0;
-    min-height: 600px;
-  }
+  .mt-lg-0 { margin-top: 0; }
+  .mr-lg-0 { margin-right: 0; }
+  .mb-lg-0 { margin-bottom: 0; }
+  .ml-lg-0 { margin-left: 0; }
 
+  .mt-lg-1 { margin-top: 8px; }
+  .mr-lg-1 { margin-right: 8px; }
+  .mb-lg-1 { margin-bottom: 8px; }
+  .ml-lg-1 { margin-left: 8px; }
 
+  .mt-lg-2 { margin-top: 16px; }
+  .mr-lg-2 { margin-right: 16px; }
+  .mb-lg-2 { margin-bottom: 16px; }
+  .ml-lg-2 { margin-left: 16px; }
+
+  .mt-lg-3 { margin-top: 32px; }
+  .mr-lg-3 { margin-right: 32px; }
+  .mb-lg-3 { margin-bottom: 32px; }
+  .ml-lg-3 { margin-left: 32px; }
+
+  .mt-lg-4 { margin-top: 64px; }
+  .mr-lg-4 { margin-right: 63px; }
+  .mb-lg-4 { margin-bottom: 64px; }
+  .ml-lg-4 { margin-left: 64px; }
 }
 
 /**
@@ -256,9 +274,9 @@ hr {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid #eee; // grey-color-light
-    border-radius: 3px;
+    border-left: 12px solid #222;
+    margin: 32px 0;
+    width: (9 / 12 * 100%);
 }
 
 code {
@@ -266,7 +284,7 @@ code {
 }
 
 pre {
-    padding: 8px 12px;
+    padding-left: 16px;
     overflow-x: auto;
 
     > code {
