@@ -1,0 +1,18 @@
+---
+layout: page
+title: Writing
+permalink: /writing/
+---
+
+<!-- Your about content goes here. -->
+<div class="py-3 px-2">
+  {% for post in site.posts %}
+    <div class="container-lg py-2 mt-3 mb-3 prose mx-auto">
+      <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
+      <h2 class="h1 mt-0">
+        <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+      <p class="">{{ post.content | strip_html | truncatewords:30}}</p>
+    </div>
+  {% endfor %}
+</div>
