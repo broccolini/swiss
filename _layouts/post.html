@@ -2,8 +2,8 @@
 layout: default
 ---
 <article class="container-lg px-2 mx-auto mt2 mb4" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="col-9 sm-width-full mb-0" itemprop="name headline">{{ page.title }}</h1>
-  <p class="mb-3"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  <h1 class="h0 col-9 sm-width-full mt-4" itemprop="name headline">{{ page.title }}</h1>
+  <p class="mb-3 bold h4"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 
   <div class="prose" itemprop="articleBody">
       {{ content }}
@@ -14,7 +14,7 @@ layout: default
 <div class="container-lg mx-auto px-1 py-2 clearfix">
   <div class="">
     {% if page.previous.url %}
-    <div class="col-4 sm-width-full left mr-2 mt-2 px-1">
+    <div class="col-4 sm-width-full left mr-lg-4 mt-3 px-1">
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.previous.url}}">
         <span class="h5 bold text-red">Previous</span>
         <p class="bold h3 link-primary mb-1">{{page.previous.title}}</p>
@@ -23,7 +23,7 @@ layout: default
     </div>
     {% endif %}
     {% if page.next.url %}
-    <div class="col-4 sm-width-full left ml-2 mt-2 px-1">
+    <div class="col-4 sm-width-full left mt-3 px-1">
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.next.url}}">
         <span class="h5 bold text-red">Next</span>
         <p class="bold h3 link-primary mb-1">{{page.next.title}}</p>
