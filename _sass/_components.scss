@@ -33,11 +33,13 @@
 
 // Homepage header styles
 
-.h0 { font-size: 128px;
+.h0 { font-size: 72px;
   line-height: 1.0125;
-  border-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 8px;
+  margin-top: 0.85em;
+
+  @media (min-width: 52em) {
+    font-size: 128px;
+  }
 }
 
 // These link styles will become more custom.
