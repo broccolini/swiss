@@ -2,9 +2,19 @@
 
 .prose {
 
-  p {
+  p, ol, ul {
     font-size: 20px;
     margin-bottom: 20px;
+  }
+
+  img { max-width: 100%; }
+
+  blockquote {
+    font-size: 16px;
+    padding: 0 16px;
+    border-left: 12px solid #ddd;
+    font-style: italic;
+    width: (9 / 12 * 100%);
   }
 
 }
