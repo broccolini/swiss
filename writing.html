@@ -5,7 +5,7 @@ permalink: /writing/
 ---
 
 <!-- Your about content goes here. -->
-<div class="py-3 px-2">
+<div class="py-3">
   {% for post in site.posts %}
     <div class="container-lg py-2 mt-3 mb-3 prose mx-auto">
       <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
