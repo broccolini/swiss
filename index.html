@@ -20,27 +20,24 @@ layout: home
       <div class="col-4 sm-width-full left border-top-thin">
 
         <div class="text-white table">
-          <a href="" title="View on GitHub" class="link-social block mt-3 text-black font-smoothing">
-          <div class="table-cell col-1">
-            {% include blank.html %}
+          <div class="inline-block mr-1">
+            {% include blank-red.html %}
           </div>
-          <div class="table-cell col-1 px-1">
-            {% include blank.html %}
+          <div class="inline-block mr-1">
+            {% include blank-red.html %}
           </div>
-          <div class="table-cell col-1">
+          <div class="inline-block">
             {% include github.html %}
           </div>
-          <span class="table-cell align-middle col-9 px-1">Follow on twitter</span>
-          </a>
         </div>
 
         <p class="h4 lh-condensed text-white mt-3 font-smoothing">{{ site.description }}</p>
 
       </div>
 
-      <div class="col-4 sm-width-full left border-top-thin ml-4 text-white table">
+      <div class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 text-white table">
           <div class="inline-block mr-1">
-            {% include dribbble.html %}
+            {% include blank-white.html %}
           </div>
           <div class="inline-block">
             {% include twitter.html %}
@@ -59,7 +56,7 @@ layout: home
       <h2 class="h1 mt-0">
         <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-      <p class="">{{ post.content | strip_html | truncatewords:30}}</p>
+      <p class="">{{ post.content | truncatewords:30}}</p>
     </div>
   {% endfor %}
 </div>
