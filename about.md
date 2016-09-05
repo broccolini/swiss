@@ -4,10 +4,8 @@ title: About
 permalink: /about/
 ---
 
-During a Live recording of Design Details with Randy Hunt at Etsy, Aaron Moodie asked the question "What keeps you up at night?". Brian Lovin asked many of the following guests on the podcast the same question, and I found it interesting to hear what people at different levels of their career had on their minds.
+<!-- Your about content goes here. -->
 
-This site is a way of sharing what keeps people like you, people who are where you were, and people who might be where you want to be, up at night.
+Bacon ipsum dolor amet short ribs beef leberkas, porchetta landjaeger turducken flank ham bacon fatback salami beef ribs meatball picanha. Shank kielbasa pork drumstick. Pancetta shank boudin, chuck turducken landjaeger t-bone beef ribs salami ball tip. Ground round filet mignon drumstick, ham brisket pork loin short ribs. Landjaeger t-bone tri-tip leberkas brisket, pig kielbasa capicola frankfurter cow alcatra ball tip. Beef porchetta doner, alcatra ground round strip steak meatloaf sirloin shoulder venison hamburger pig pork loin tenderloin picanha.
 
-Expanding on the initial collection of quotes from the podcast, I've asked people to write and submit their own answer to "What keeps you up at night?".
-
-<small>Read the guidelines for submission if you'd like to share your own answer.</small>
+Chicken frankfurter picanha kielbasa rump meatloaf strip steak tri-tip spare ribs andouille swine. Beef ribs venison shankle tri-tip pork loin sausage t-bone boudin, short loin tongue picanha ham hock swine prosciutto tenderloin. Cupim corned beef prosciutto, pork short ribs rump spare ribs beef fatback ham hock flank pancetta jerky venison. Shankle capicola t-bone pastrami, shank ham hock turducken ham pork corned beef pork chop beef ribs tongue pig. Strip steak pork short ribs, flank turducken chicken cupim short loin meatloaf. T-bone shank jowl kevin pancetta meatball venison chicken drumstick shoulder rump flank ham short ribs short loin. Bresaola flank ribeye shankle prosciutto turducken beef ribs pork loin pork belly.
