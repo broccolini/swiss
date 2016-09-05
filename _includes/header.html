@@ -1,16 +1,16 @@
-<header class="border-bottom-thick border-black clearfix">
-  <div class="py-1 px-2 left">
+<header class="border-bottom-thick border-black px-2 clearfix">
+  <div class="py-1 left sm-width-full">
     <a class="align-middle link-primary" href="{{ site.baseurl }}/">
       <div class="text-red">
         {{ site.title }}
       </div>
     </a>
   </div>
-  <div class="right">
+  <div class="right sm-width-full">
     <ul class="list-reset py-1">
       {% for my_page in site.pages %}
         {% if my_page.title %}
-        <li class="inline-block"><a class="link-primary mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+        <li class="inline-block"><a class="link-primary mr-2 mr-lg-0 ml-lg-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
