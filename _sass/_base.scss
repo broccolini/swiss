@@ -83,6 +83,10 @@ hr {
   margin-bottom: 0.5em;
 }
 
+ul, ol {
+  list-style: inside;
+}
+
 .btn {
   color: #222;
   font-weight: 600;
@@ -115,11 +119,11 @@ hr {
 .bg-white { background-color: #fff; }
 .bg-gray-light { background-color: #f2f2f2; }
 .bg-blue { background-color: #1372E7; }
-.bg-red { background-color: #e84524; }
+.bg-red { background-color: $red; }
 
 .fill-white { fill: #fff; }
 .fill-gray { fill: #ccc; }
-.fill-red { fill: #e84524; }
+.fill-red { fill: $red; }
 
 .text-black { color: #181818; }
 .text-white { color: #fff; }
@@ -272,24 +276,16 @@ hr {
 /**
  * Code formatting
  */
-pre,
-code {
+pre {
     border-left: 12px solid #222;
     margin: 32px 0;
+    padding-left: 16px;
     width: (9 / 12 * 100%);
+    overflow-x: auto;
 }
 
 code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding-left: 16px;
-    overflow-x: auto;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+    color: $red-small;
+    font-size: 16px;
+    padding: 1px 4px;
 }
