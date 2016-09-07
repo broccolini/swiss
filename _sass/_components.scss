@@ -27,8 +27,16 @@
     font-size: 16px;
     padding: 0 16px;
     border-left: 12px solid #ddd;
+
+  dt {
+    font-weight: bold;
     font-style: italic;
-    width: (9 / 12 * 100%);
+    line-height: 1.25;
+  }
+
+  dd {
+    font-style: italic;
+    margin-bottom: 0.5em;
   }
 
   // Tables
