@@ -20,7 +20,7 @@ layout: default
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.previous.url}}">
         <span class="h5 bold text-red">Previous</span>
         <p class="bold h3 link-primary mb-1">{{page.previous.title}}</p>
-        <p class="mr-3">{{ page.previous.content | strip_html | truncatewords:20}}</p>
+        <p class="mr-3">{{ page.previous.content | truncatewords:20}}</p>
       </a>
     </div>
     {% endif %}
@@ -29,7 +29,7 @@ layout: default
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.next.url}}">
         <span class="h5 bold text-red">Next</span>
         <p class="bold h3 link-primary mb-1">{{page.next.title}}</p>
-        <p class="mr-3">{{ page.next.content | strip_html | truncatewords:20}}</p>
+        <p class="mr-3">{{ page.next.content | truncatewords:20}}</p>
       </a>
     </div>
     {% endif %}
