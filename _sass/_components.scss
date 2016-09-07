@@ -13,8 +13,16 @@
 
   }
 
-  img { max-width: 100%; }
+  img {
 
+    max-width: 100%;
+
+    @media (min-width: 52em) {
+      max-width: (12 / 10 * 100%);
+    }
+
+  }
+  
   blockquote {
     font-size: 16px;
     padding: 0 16px;
