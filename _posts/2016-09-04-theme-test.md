@@ -18,39 +18,39 @@ There should be whitespace between paragraphs. There should be whitespace betwee
 >
 > There should be no margin below this final sentence.
 
-# Header 1
+# Heading 1
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+This is a normal paragraph following a Heading. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-## Header 2
+## Heading 2
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+> This is a blockquote following a Heading. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-### Header 3
+### Heading 3
 
 ```
-This is a code block following a header.
+This is a code block following a Heading.
 ```
 
-#### Header 4
+#### Heading 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+* This is an unordered list following a Heading.
+* This is an unordered list following a Heading.
+* This is an unordered list following a Heading.
 
-##### Header 5
+##### Heading 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1. This is an ordered list following a Heading.
+2. This is an ordered list following a Heading.
+3. This is an ordered list following a Heading.
 
-###### Header 6
+###### Heading 6
 
 | What      | Follows         |
 |-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+| A table   | A Heading        |
+| A table   | A Heading        |
+| A table   | A Heading        |
 
 ----------------
 
@@ -166,7 +166,8 @@ Small images should be shown at their actual size.
 
 Large images should always scale down and fit in the content container.
 
-![](http://placekitten.com/g/1200/800/)
+<!-- ![](http://placekitten.com/g/1200/800/) -->
+![](/images/goat.jpg)
 
 ```
 This is the final element on the page and there should be no margin below this.
