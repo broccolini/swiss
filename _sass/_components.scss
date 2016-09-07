@@ -99,9 +99,10 @@
 
 // Homepage header styles
 
-.h0 { font-size: 72px;
+.h0 { font-size: 64px;
   line-height: 1.0125;
   margin-top: 0.85em;
+  word-wrap: break-word;
 
   @media (min-width: 52em) {
     font-size: 128px;
