@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="container-lg px-2 mx-auto mt2 mb4" itemscope itemtype="http://schema.org/BlogPosting">
   <h1 class="h0 col-9 sm-width-full mt-4 mb-3 inline-block" itemprop="name headline">{{ page.title }}</h1>
-  <div class="col-4 mt-3 border-top-thin ">
+  <div class="col-4 sm-width-full mt-3 border-top-thin ">
     <p class="mb-3 bold h4 py-3"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
   </div>
 
