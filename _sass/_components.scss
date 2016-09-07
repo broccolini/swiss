@@ -4,7 +4,13 @@
 
   p, ol, ul {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
+    width: 100%;
+
+    @media (min-width: 52em) {
+      width: (10 / 12 * 100%);
+    }
+
   }
 
   img { max-width: 100%; }
