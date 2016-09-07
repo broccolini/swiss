@@ -4,8 +4,18 @@ title: About
 permalink: /about/
 ---
 
-<!-- Your about content goes here. -->
+Swiss is a bold Jekyll theme inspired by Swiss design and the works of Massimo Vignelli. This theme lends itself well to sites heavy on written content.
 
-Bacon ipsum dolor amet short ribs beef leberkas, porchetta landjaeger turducken flank ham bacon fatback salami beef ribs meatball picanha. Shank kielbasa pork drumstick. Pancetta shank boudin, chuck turducken landjaeger t-bone beef ribs salami ball tip. Ground round filet mignon drumstick, ham brisket pork loin short ribs. Landjaeger t-bone tri-tip leberkas brisket, pig kielbasa capicola frankfurter cow alcatra ball tip. Beef porchetta doner, alcatra ground round strip steak meatloaf sirloin shoulder venison hamburger pig pork loin tenderloin picanha.
+### Features:
+* Mobile-first design ensures this theme performs fastest on mobile while scaling elegantly to desktop-size screens.
+* Designed for blogs and sites heavy on written content, with bold typography styles, homepage summaries, and previous/next snippets.
+* Supports a wide range of HTML elements and markdown.
+* Flexible styles that can be reused for customization without adding additional CSS.
+* Simple styling for code snippets (if you want something with syntax highlighting, checkout ....)
+* Dynamically generated navigation links. See docs below for adding pages with specific post category for-loops.
 
-Chicken frankfurter picanha kielbasa rump meatloaf strip steak tri-tip spare ribs andouille swine. Beef ribs venison shankle tri-tip pork loin sausage t-bone boudin, short loin tongue picanha ham hock swine prosciutto tenderloin. Cupim corned beef prosciutto, pork short ribs rump spare ribs beef fatback ham hock flank pancetta jerky venison. Shankle capicola t-bone pastrami, shank ham hock turducken ham pork corned beef pork chop beef ribs tongue pig. Strip steak pork short ribs, flank turducken chicken cupim short loin meatloaf. T-bone shank jowl kevin pancetta meatball venison chicken drumstick shoulder rump flank ham short ribs short loin. Bresaola flank ribeye shankle prosciutto turducken beef ribs pork loin pork belly.
+## Themes
+
+## Browser Support
+
+## Installation
