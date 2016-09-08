@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Theme Test"
+title:  "Markdown sample"
 date:   2016-09-04
 ---
 
@@ -24,7 +24,13 @@ This is a normal paragraph following a Heading. Bacon ipsum dolor sit amet t-bon
 
 ## Heading 2
 
+This is a normal paragraph following a Heading. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+
 > This is a blockquote following a Heading. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+This is a normal paragraph following a Heading. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
 
 ### Heading 3
 
@@ -69,18 +75,6 @@ And an ordered list:
 1. Michael Jackson
 2. Michael Bolton
 3. Michael Bublé
-
-And an unordered task list:
-
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
 
 And a nested list:
 
