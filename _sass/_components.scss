@@ -13,6 +13,18 @@
 
   }
 
+  ul, ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+
+    ul li {
+      margin-bottom: 0;
+    }
+  }
+
   img {
 
     max-width: 100%;
