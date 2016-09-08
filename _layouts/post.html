@@ -4,7 +4,7 @@ layout: default
 <article class="container-lg px-2 mx-auto mt2 mb4" itemscope itemtype="http://schema.org/BlogPosting">
   <h1 class="h0 col-9 sm-width-full mt-4 mb-3 inline-block" itemprop="name headline">{{ page.title }}</h1>
   <div class="col-4 sm-width-full mt-3 border-top-thin ">
-    <p class="mb-3 bold h4 py-3 date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+    <p class="mb-3 py-2 bold h4"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
   </div>
 
   <div class="prose" itemprop="articleBody">
@@ -13,25 +13,23 @@ layout: default
 
 </article>
 
-<div class="container-lg mx-auto px-1 py-2 clearfix">
-  <div class="">
-    {% if page.previous.url %}
-    <div class="col-4 sm-width-full left mr-lg-4 mt-3 px-1">
+<div class="container-lg mx-auto px-2 py-2 clearfix">
+  {% if page.previous.url %}
+    <div class="col-4 sm-width-full left mr-lg-4 mt-3">
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.previous.url}}">
         <span class="h5 bold text-red">Previous</span>
         <p class="bold h3 link-primary mb-1">{{page.previous.title}}</p>
-        <p class="mr-3">{{ page.previous.content | truncatewords:20}}</p>
+        <p>{{ page.previous.content | truncatewords:20}}</p>
       </a>
     </div>
     {% endif %}
     {% if page.next.url %}
-    <div class="col-4 sm-width-full left mt-3 px-1">
+    <div class="col-4 sm-width-full left mt-3">
       <a class="no-underline border-top-thin border-black py-1 block" href="{{page.next.url}}">
         <span class="h5 bold text-red">Next</span>
         <p class="bold h3 link-primary mb-1">{{page.next.title}}</p>
-        <p class="mr-3">{{ page.next.content | truncatewords:20}}</p>
+        <p>{{ page.next.content | truncatewords:20}}</p>
       </a>
     </div>
-    {% endif %}
-  </div>
+  {% endif %}
 </div>
