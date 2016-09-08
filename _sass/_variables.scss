@@ -6,7 +6,9 @@ $body-font: "Helvetica Neue", Arial, sans-serif;
 $black: #181818;
 $red: #E74727;
 $red-small: #DC3918;
+$white: #fff;
 
 // Theme color
-$primary-color: $black;
-$secondary-color: $red;
+$color-primary: $black !default;
+$color-accent: $red !default;
+$color-reverse: $white !default;
