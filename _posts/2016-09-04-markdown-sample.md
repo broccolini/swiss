@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: category-post
 title:  "Markdown sample"
 date:   2016-09-04
 ---

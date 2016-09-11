@@ -1,0 +1,37 @@
+<!-- Use if you want to show previous and next for posts within a category. -->
+{% if page.categories %}
+  {% assign category = page.categories[0] %}
+  {% assign posts = site.categories[category] %}
+  {% for post in posts %}
+    {% if post.url == page.url %}
+      {% assign post_index0 = forloop.index0 %}
+      {% assign post_index1 = forloop.index %}
+    {% endif %}
+  {% endfor %}
+  {% for post in posts %}
+    {% if post_index0 == forloop.index %}
+      {% assign next_post = post %}
+    {% endif %}
+    {% if post_index1 == forloop.index0 %}
+      {% assign prev_post = post %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if prev_post %}
+<div class="col-4 sm-width-full left mr-lg-4 mt-3">
+  <a class="no-underline border-top-thin border-black py-1 block" href="{{ prev_post.url }}">
+    <span class="h5 bold text-red">Previous</span>
+    <p class="bold h3 link-primary mb-1">{{ prev_post.title }}</p>
+    <p>{{ page.previous.content | truncatewords:20 }}</p>
+  </a>
+</div>
+{% endif %}
+{% if next_post %}
+<div class="col-4 sm-width-full left mt-3">
+  <a class="no-underline border-top-thin border-black py-1 block" href="{{ next_post.url }}">
+    <span class="h5 bold text-red">Next</span>
+    <p class="bold h3 link-primary mb-1">{{ next_post.title }}</p>
+    <p>{{ page.next.content | truncatewords:20 }}</p>
+  </a>
+</div>
+{% endif %}
