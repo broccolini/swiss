@@ -4,8 +4,7 @@ title: Writing
 permalink: /writing/
 ---
 
-<!-- Choose which category you want in:
-{% for post in site.categories.YOUR-CATEGORY %}. -->
+<!-- Choose which category you want to show posts for. -->
 {% for post in site.categories.writing %}
   <div class="container-lg mx-auto py-2 mb-2 prose">
     <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
