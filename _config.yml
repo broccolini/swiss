@@ -1,6 +1,6 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
+# This config file is meant for settings that affect your whole site, values
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing these this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
@@ -10,16 +10,19 @@
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Swiss Jekyll Theme
-email: your-email@domain.com
-description: This theme can be adapted for project documentation, portfolios, or a blog.
+description: A bold typographic theme inspired by Swiss design.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://example.com" # the base hostname & protocol for your site
+github_repo: jekyll # the GitHub repo name for your project
+github_username: jekyll
 twitter_username: jekyllrb
-github_username:  jekyll
+medium_username: example
+dribbble_username: example
+instagram_username: example
 
 # Build settings
 markdown: kramdown
