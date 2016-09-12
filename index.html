@@ -30,9 +30,8 @@ layout: home
             {% include github.html %}
           </div>
         </div>
-
-        <p class="h4 lh-condensed text-white mt-3 font-smoothing">{{ site.description }}</p>
-
+        <!-- Set site description in config.yml -->
+        <p class="h4 lh-condensed text-white font-smoothing mt-2 py-1">{{ site.description }}</p>
       </div>
 
       <div class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 text-white table">
@@ -53,10 +52,10 @@ layout: home
   {% for post in site.posts %}
     <div class="py-2 mb-2 prose mx-auto">
       <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
-      <h2 class="h1 mt-0">
+      <h2 class="h1 lh-condensed mt-0">
         <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-      <p class="">{{ post.content | truncatewords:30}}</p>
+      {{ post.content | truncatewords:30}}
     </div>
   {% endfor %}
 </div>
