@@ -160,8 +160,7 @@ Small images should be shown at their actual size.
 
 Large images should always scale down and fit in the content container.
 
-<!-- ![](http://placekitten.com/g/1200/800/) -->
-![](/images/goat.jpg)
+![](http://placekitten.com/g/1200/800/)
 
 ```
 This is the final element on the page and there should be no margin below this.
