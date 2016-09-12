@@ -55,7 +55,7 @@ layout: home
       <h2 class="h1 lh-condensed mt-0">
         <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-      {{ post.content | truncatewords:30}}
+      <p>{{ post.content | strip_html | truncatewords:30 }}</p>
     </div>
   {% endfor %}
 </div>
