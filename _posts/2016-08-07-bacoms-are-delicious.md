@@ -2,7 +2,6 @@
 layout: post
 title:  "Bacoms are delicious"
 date:   2016-08-07
-categories:
 ---
 
 I've been thinking a lot recently about taking care of myself and being a basic human. It's so easy to throw yourself into work or get caught up in something on the side that you really want to do. When I do that I don't eat healthy, I don't sleep well, and I don't exercise.
