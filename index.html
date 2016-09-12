@@ -14,10 +14,8 @@ layout: home
     </ul>
   </div>
 
-  <div class="container-lg mx-auto py-1 px-2 mb-2 text-white clearfix">
-    <h1 class="h0 inline-block col-9 sm-width-full mt-3 mb-3 text-white">{{ site.title }}</h1>
-    <div class="clearfix mb-2 py-3">
-      <div class="col-4 sm-width-full left border-top-thin">
+  <div class="container mx-auto px-2 mb-2 text-white clearfix">
+    <h1 class="h0 inline-block col-9 sm-width-full py-4 mt-3 text-white">{{ site.title }}</h1>
 
     <div class="clearfix mb-4 py-1">
       <div class="col-4 sm-width-full left border-top-thin">
@@ -51,9 +49,9 @@ layout: home
 </header>
 
 
-<div class="py-3 px-2">
+<div class="container mx-auto py-4 px-2">
   {% for post in site.posts %}
-    <div class="container-lg py-2 mt-3 mb-3 prose mx-auto">
+    <div class="py-2 mb-2 prose mx-auto">
       <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
       <h2 class="h1 mt-0">
         <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
