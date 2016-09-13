@@ -2,24 +2,5 @@
 // Font family
 $body-font: "Helvetica Neue", Arial, sans-serif;
 
-// Color variables
-$black: #181818;
-$white: #fff;
-$red: #E74727;
-$red-small: #DC3918;
-
-$gray: #444;
-$gray-light: #777;
-$gray-lighter: #bbb;
-
-
+// Default border color
 $color-border: #ddd !default;
-
-
-// Default for link opacity on hover unless otherwise specified.
-$opacity-primary-link: 1 !default;
-
-@mixin font-smoothing {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
