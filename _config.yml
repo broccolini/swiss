@@ -19,6 +19,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://example.com" # the base hostname & protocol for your site
 github_repo: jekyll # the GitHub repo name for your project
 github_username: jekyll
+
+# Optional social links, you can choose which ones to use in index.html
+# Default is twitter, change to {% include.medium %} etc.
 twitter_username: jekyllrb
 medium_username: example
 dribbble_username: example
