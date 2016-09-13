@@ -17,3 +17,7 @@ $color-code: $blue-small !default;
 $color-nav-link: $blue !default;
 $color-primary-link: $blue !default;
 
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
