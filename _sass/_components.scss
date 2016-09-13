@@ -1,6 +1,21 @@
-@import "variables.scss";
-
 // Styling markdown output
+
+// Code formatting
+pre {
+    border-left: 8px solid $color-border;
+    margin: 32px 0;
+    padding-left: 16px;
+    width: (9 / 12 * 100%);
+    overflow-x: auto;
+}
+
+code {
+    color: $color-code;
+    font-size: 16px;
+    padding: 1px 4px;
+}
+
+
 .prose {
 
   p, ol, ul {
@@ -60,6 +75,14 @@
 
   }
 
+  hr {
+    color: $color-body-text;
+    border-style: solid;
+    border-width: thin;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
   dt {
     font-weight: bold;
     font-style: italic;
@@ -71,7 +94,7 @@
     margin-bottom: 0.5em;
   }
 
-  // Tables
+  // Markdown tables
   table {
     border-collapse: collapse;
     display: block;
@@ -90,43 +113,19 @@
     th,
     td {
       padding: 16px 32px 16px 2px;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
+      border-top: 1px solid $color-body-text;
+      border-bottom: 1px solid $color-body-text;
     }
 
     tr {
       background-color: #fff;
-      border-top: 1px solid #222;
+      border-top: 1px solid $color-body-text;
     }
 
     tr th {
-      border-top: 2px solid #222;
-      border-bottom: 2px solid #222;
+      border-top: 2px solid $color-body-text;
+      border-bottom: 2px solid $color-body-text;
     }
   }
 
-}
-
-
-// Link styles for social icons
-.link-social {
-  text-decoration: none;
-  font-weight: bold;
-  line-height: 1;
-
-  &:hover {
-    color: #fff !important;
-    text-decoration: none !important;
-  }
-}
-
-// Link styles for navigation
-.link-primary {
-  font-weight: bold;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-primary-link;
-    text-decoration: none;
-  }
 }

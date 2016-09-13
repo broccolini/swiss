@@ -35,17 +35,6 @@ body {
     background-color: #fff;
 }
 
-
-// h1 {
-//   font-size: 48px;
-//   line-height: 1.25;
-//
-//   @media (min-width: 52em) {
-//     font-size: 64px;
-//   }
-//
-// }
-
 p {
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -70,29 +59,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-hr {
-  color: $black;
-  border-style: solid;
-  border-width: thin;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-/**
- * Code formatting
- */
-pre {
-    border-left: 8px solid $color-border;
-    margin: 32px 0;
-    padding-left: 16px;
-    width: (9 / 12 * 100%);
-    overflow-x: auto;
-}
-
-code {
-    color: $color-code;
-    font-size: 16px;
-    padding: 1px 4px;
 }
