@@ -45,7 +45,7 @@
 .header-text { color: $color-foreground; }
 .header-title { color: $color-title; }
 .header-social-accent { fill: $color-dot-accent; } // red
-.header-social-foreground { fill: $color-foreground; } // white
+.header-social { fill: $color-foreground; } // white
 .header-link:hover { color: $color-nav-link !important; }
 .text-accent { color: $color-text-accent; }
 
