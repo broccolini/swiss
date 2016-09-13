@@ -35,7 +35,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, and/or sass.
+To change themes, rename `theme-black.scss` in `css/styles.scss`:
+
+```scss
+@import
+        "variables.scss",
+        "theme-black.scss", // set theme here
+        "base",
+        "components",
+        "utilities"
+;
+```
+
+Change to one of the following themes, such as `theme-blue`.
+- blue
+- gray
+- magenta
+- orange
+- red
+- white
+- yellow
 
 ## Contributing
 
