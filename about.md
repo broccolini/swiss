@@ -26,7 +26,8 @@ To change themes, rename `theme-black.scss` in `css/styles.scss`:
 ;
 ```
 
-Change to one of the following themes, such as `theme-blue`.
+Change to one of the following themes, such as `theme-blue`:
+
 - blue
 - gray
 - magenta
