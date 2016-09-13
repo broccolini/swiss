@@ -37,44 +37,18 @@
 .border-0 { border: 0; }
 
 
-/* Color utilities */
-
-// Custom header settings
-.header-background { background-color: $color-background; } // black
+/* Theme color utilities */
+.header-background { background-color: $color-background; }
 .header-border { border-color: $color-foreground; }
-.header-text { color: $color-foreground; }
 .header-title { color: $color-title; }
-.header-social-accent { fill: $color-dot-accent; } // red
-.header-social { fill: $color-foreground; } // white
-.header-link:hover { color: $color-nav-link !important; }
-.text-accent { color: $color-text-accent; }
-
-.bg-black { background-color: #181818; }
-.bg-white { background-color: #fff; }
-.bg-red { background-color: $red; }
-// .bg-gray-light { background-color: #f2f2f2; }
-// .bg-blue { background-color: #1372E7; }
-
-.fill-white { fill: #fff; }
-.fill-red { fill: $red; }
-
-.text-black { color: #181818; }
-.text-white { color: #fff; }
-.text-red { color: $red; }
-// .text-gray { color: #ccc; }
-// .text-blue { color: #1372E7; }
-
-.border-white { border-color: #fff; }
-.border-black { border-color: #222; }
-// .border-gray { border-color: #828282; }
-// .border-gray-light { border-color: #ddd; }
-// .border-blue { border-color: #1372E7; }
-
+.header-text { color: $color-foreground; }
+.header-social { fill: $color-foreground; }
+.header-social-accent { fill: $color-dot-accent; }
+.header-link:hover { color: $color-nav-link !important; } // used for navigation links on homepage
+.text-accent { color: $color-text-accent; } // used for date in post list and home link
 
 /* Layout utilities */
-.container {
-  max-width: 64em;
-}
+.container { max-width: 64em; }
 
 .col-1 { width: (1 / 12 * 100%); }
 .col-2 { width: (2 / 12 * 100%); }
