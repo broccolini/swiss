@@ -4,11 +4,22 @@ $body-font: "Helvetica Neue", Arial, sans-serif;
 
 // Color variables
 $black: #181818;
+$white: #fff;
 $red: #E74727;
 $red-small: #DC3918;
-$white: #fff;
 
-// Theme color
-$color-primary: $black !default;
-$color-accent: $red !default;
-$color-reverse: $white !default;
+$gray: #444;
+$gray-light: #777;
+$gray-lighter: #bbb;
+
+
+$color-border: #ddd !default;
+
+
+// Default for link opacity on hover unless otherwise specified.
+$opacity-primary-link: 1 !default;
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

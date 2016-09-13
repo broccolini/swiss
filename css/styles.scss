@@ -5,6 +5,8 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "variables.scss",
+        "theme-black.scss",
         "base",
         "components",
         "utilities"

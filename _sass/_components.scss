@@ -40,7 +40,7 @@
     line-height: 1.375;
     padding-left: 20px;
     margin: 40px 0 40px -16px;
-    border-left: 8px solid #ddd;
+    border-left: 8px solid $color-border;
     font-style: italic;
 
     p {
@@ -126,7 +126,7 @@
   text-decoration: none;
 
   &:hover {
-    color: $red;
+    color: $color-primary-link;
     text-decoration: none;
   }
 }

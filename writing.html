@@ -7,7 +7,7 @@ permalink: /writing/
 <!-- Choose which category you want to show posts for. -->
 {% for post in site.categories.writing %}
   <div class="container mx-auto py-2 mb-2 prose">
-    <a class="no-underline h5 bold text-red" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
+    <a class="no-underline h5 bold text-accent" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
     <h2 class="h1 lh-condensed mt-0">
       <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
