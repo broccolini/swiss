@@ -1,4 +1,4 @@
-# Swiss Jekyll Theme
+# :construction: WIP :construction: Swiss Jekyll Theme
 
 Swiss is a bold Jekyll theme inspired by Swiss design and the works of Massimo Vignelli. This theme lends itself well to sites heavy on written content.
 
