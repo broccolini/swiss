@@ -6,7 +6,7 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "variables.scss",
-        "theme-black.scss", // set theme here
+        "theme-{{ site.theme-color }}.scss", // set theme here
         "base",
         "components",
         "utilities"

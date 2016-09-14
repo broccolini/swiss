@@ -27,5 +27,9 @@ medium_username: example
 dribbble_username: example
 instagram_username: example
 
+# Set theme color here
+# Choose from: black, blue, gray, magenta, orange, red, white, and yellow.
+theme-color: black
+
 # Build settings
 markdown: kramdown
