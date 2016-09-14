@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "swiss"
+  spec.name          = "jekyll-swiss"
   spec.version       = "0.1.0"
   spec.authors       = ["broccolini"]
   spec.email         = ["diana.mounter@gmail.com"]
