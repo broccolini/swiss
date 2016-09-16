@@ -41,14 +41,13 @@ layout: home
             {% include dot.html %}
           </div>
           <div class="inline-block mt-3">
-            {% include twitter.html %}
+            {% include {{ site.social_link | default: "twitter" }}.html %}
           </div>
       </div>
     </div>
 
   </div>
 </header>
-
 
 <div class="container mx-auto py-4 px-2">
   {% for post in site.posts %}
