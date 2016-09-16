@@ -16,3 +16,12 @@ $color-code: $gray !default;
 $color-nav-link: $white !default;
 $color-primary-link: $orange !default;
 $color-border: $orange;
+
+
+// Import sass partials (used in all themes)
+@import
+        "variables",
+        "base",
+        "components",
+        "utilities"
+;

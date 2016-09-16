@@ -27,5 +27,9 @@ medium_username: broccolini
 dribbble_username: broccolini
 instagram_username: broccolini
 
+# Set theme color here
+# Choose from: black, blue, gray, magenta, orange, red, white, and yellow.
+theme-color: black
+
 # Build settings
 markdown: kramdown
