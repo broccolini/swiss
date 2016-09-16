@@ -17,3 +17,12 @@ $color-text-accent: $gray-light !default;
 $color-code: $gray-light !default;
 $color-nav-link: $gray !default;
 $color-primary-link: $gray-light !default;
+
+
+// Import sass partials (used in all themes)
+@import
+        "variables",
+        "base",
+        "components",
+        "utilities"
+;

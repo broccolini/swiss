@@ -3,11 +3,7 @@
 ---
 @charset "utf-8";
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Import partials from `sass_dir` and set theme here
 @import
-        "variables.scss",
-        "theme-{{ site.theme-color }}.scss", // set theme here
-        "base",
-        "components",
-        "utilities"
+        "theme-{{ site.theme-color | default: "black" }}.scss"
 ;
