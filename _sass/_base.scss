@@ -28,8 +28,8 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-    font-family: $body-font;
-    font-size: 16px;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
     line-height: 1.5;
     color: $color-body-text;
     background-color: #fff;
