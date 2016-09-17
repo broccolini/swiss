@@ -27,7 +27,7 @@ social_username: jekyllrb
 
 # Set theme color here
 # Choose from: black (default), blue, gray, magenta, orange, red, white, and yellow.
-theme-color: black
+theme_color: black
 
 # Build settings
 markdown: kramdown

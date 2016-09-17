@@ -5,5 +5,5 @@
 
 // Import partials from `sass_dir` and set theme here
 @import
-        "theme-{{ site.theme-color | default: "black" }}.scss"
+        "theme-{{ site.theme_color | default: "black" }}.scss"
 ;
