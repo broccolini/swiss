@@ -54,15 +54,9 @@
         </div>
       </header>
 
-      <div class="container mx-auto py-4 px-2">
+      <div class="container mx-auto px-2 py-4">
         {% for post in site.posts %}
-          <div class="py-2 mb-2 prose mx-auto">
-            <a class="no-underline h5 bold text-accent" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
-            <h2 class="h1 lh-condensed mt-0">
-              <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-            <p>{{ post.content | strip_html | truncatewords:30 }}</p>
-          </div>
+          {% include post_block.html %}
         {% endfor %}
       </div>
 
