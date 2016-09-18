@@ -30,13 +30,13 @@ code {
   }
 
   ul, ol {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   li {
     margin-bottom: 0.5em;
 
-    ul li {
+    ul li, ol li {
       margin-bottom: 0;
     }
   }
