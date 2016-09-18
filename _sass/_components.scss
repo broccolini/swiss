@@ -2,16 +2,16 @@
 
 // Code formatting
 pre {
-    border-left: 8px solid $color-border;
-    margin: 32px 0;
+    border-left: $spacer-1 solid $color-border;
+    margin: $spacer-3 0;
     padding-left: 16px;
-    width: (9 / 12 * 100%);
+    width: (9 / 12 * 100%); // matches col-9
     overflow-x: auto;
 }
 
 code {
     color: $color-code;
-    font-size: 16px;
+    font-size: $body-font-size;
     padding: 1px 4px;
 }
 
@@ -19,24 +19,24 @@ code {
 .prose {
 
   p, ol, ul {
-    font-size: 20px;
+    font-size: $prose-font-size;
     margin-bottom: 1em;
     width: 100%;
 
-    @media (min-width: 52em) {
-      width: (10 / 12 * 100%);
+    @media (min-width: $breakpoint-lg) {
+      width: (10 / 12 * 100%); // matches col-10
     }
 
   }
 
   ul, ol {
-    padding-left: 20px;
+    padding-left: 40px;
   }
 
   li {
     margin-bottom: 0.5em;
 
-    ul li {
+    ul li, ol li {
       margin-bottom: 0;
     }
   }
@@ -45,8 +45,8 @@ code {
 
     max-width: 100%;
 
-    @media (min-width: 52em) {
-      max-width: (12 / 10 * 100%);
+    @media (min-width: $breakpoint-lg) {
+      max-width: (12 / 10 * 100%); // make image fill width of container on desktop
     }
 
   }
@@ -55,16 +55,16 @@ code {
     line-height: 1.375;
     padding-left: 20px;
     margin: 40px 0 40px -16px;
-    border-left: 8px solid $color-border;
+    border-left: $spacer-1 solid $color-border;
     font-style: italic;
 
     p {
       font-size: 24px;
     }
 
-    @media (min-width: 52em) {
-      padding-left: 32px;
-      margin: 64px 0 64px -40px;
+    @media (min-width: $breakpoint-lg) {
+      padding-left: $spacer-3;
+      margin: $spacer-4 0 $spacer-4 -40px;
       max-width: (11 / 10 * 100%);
 
       p {
@@ -112,7 +112,7 @@ code {
 
     th,
     td {
-      padding: 16px 32px 16px 2px;
+      padding: $spacer-2 $spacer-3 $spacer-2 2px;
       border-top: 1px solid $color-body-text;
       border-bottom: 1px solid $color-body-text;
     }

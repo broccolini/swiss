@@ -20,16 +20,14 @@ url: "http://broccolini.net" # the base hostname & protocol for your site
 github_repo: swiss # the GitHub repo name for your project
 github_username: broccolini
 
-# Optional social links, you can choose which ones to use in index.html
-# Default is twitter, change to {% include.medium %} etc.
-twitter_username: broccolini
-medium_username: broccolini
-dribbble_username: broccolini
-instagram_username: broccolini
+# Optional social link, you can choose from the following options:
+# twitter (default), instagram, medium, or dribbble
+social_link: twitter
+social_username: broccolini
 
 # Set theme color here
-# Choose from: black, blue, gray, magenta, orange, red, white, and yellow.
-theme-color: black
+# Choose from: black (default), blue, gray, magenta, orange, red, white, and yellow.
+theme_color: black
 
 # Build settings
 markdown: kramdown
