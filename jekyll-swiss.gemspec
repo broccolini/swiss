@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-swiss"
-  spec.version       = "0.3.0"
+  spec.version       = "0.4.0"
   spec.authors       = ["broccolini"]
   spec.email         = ["diana.mounter@gmail.com"]
 
@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown)|$)))}i)
+    f.match(%r{^(assets|_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown)|$)))}i)
   end
 
   spec.add_development_dependency "jekyll", "~> 3.2"
