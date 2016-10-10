@@ -14,7 +14,7 @@
             {% for my_page in site.pages %}
               {% if my_page.title %}
               <li class="inline-block">
-                <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a>
               </li>
               {% endif %}
             {% endfor %}
