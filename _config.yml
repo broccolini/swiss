@@ -32,3 +32,4 @@ theme_color: black
 
 # Build settings
 markdown: kramdown
+theme: jekyll-swiss
