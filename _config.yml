@@ -33,3 +33,6 @@ theme_color: black
 # Build settings
 markdown: kramdown
 theme: jekyll-swiss
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
