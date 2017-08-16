@@ -17,6 +17,7 @@ title: Swiss Jekyll Theme
 description: A bold typographic theme inspired by Swiss design.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+locale: en
 github_repo: jekyll # the GitHub repo name for your project
 github_username: jekyll
 
@@ -31,3 +32,10 @@ theme_color: black
 
 # Build settings
 markdown: kramdown
+theme: jekyll-swiss
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
