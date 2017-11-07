@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Bacoms are delicious"
-date:   2016-08-07
+title:  "Pixels Camp 2017"
+date:   2017-11-07
 ---
 
 Lorem ipsizzle funky fresh i'm in the shizzle boom shackalack, consectetizzle adipiscing my shizz. Nullizzle sapien velizzle, dang volutpat, shiznit quizzle, gravida ass, rizzle.
