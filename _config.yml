@@ -17,7 +17,7 @@ title: Marcio
 description: Software Engineering student that will, hopefully, be able to finish his studies within 5 years.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_repo: jekyll # the GitHub repo name for your project
+github_repo: dunnadan.github.io # the GitHub repo name for your project
 github_username: dunnadan
 
 # Optional social link, you can choose from the following options:
