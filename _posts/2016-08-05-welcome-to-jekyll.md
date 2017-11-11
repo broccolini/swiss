@@ -1,7 +1,7 @@
 ---
 layout: category-post
-title:  Programing: Origins
-date:   2016-08-05 20:20:56 -0400
+title:  "Programing: Origins"
+date:   2017-11-11 20:20:56 -0400
 categories: writing
 ---
 As short as my interaction with the whole programming world might yet be (1 year and few months) I have already grown an enormous interest for all of it. The thinking method, the amount of things we can do with programming, all of it amazes me.
