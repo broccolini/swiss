@@ -1,5 +1,5 @@
 ---
-layout: category-post
+layout: post
 title:  "Programing: Origins"
 date:   2017-11-11 20:20:56 -0400
 categories: writing
