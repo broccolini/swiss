@@ -17,7 +17,7 @@ title: From the light
 description: Computer Engineering student. Programming, music, physics and philosophy enthusiast.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_repo: dunnadan/ # the GitHub repo name for your project
+github_repo: # the GitHub repo name for your project
 github_username: dunnadan
 
 # Optional social link, you can choose from the following options:
