@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<article class="container mx-auto px-2 mt2 mb4">
+  <header>
+    <h1 class="h0 py-4 mt-3">{{ page.title }}</h1>
+  </header>
+  <div class="col-4 sm-width-full border-top-thin">
+  </div>
+  <div class="prose mb-4 py-4">
+    {{ content }}
+    <select onchange="show_page(this.value)">
+          <option value="">Alphabetical</option>
+          <option value="stars" selected>Stars</option>
+   </select>
+  </div>
+</article>
+
+<script>
+var objectsData = [];
+function getRepos(){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET","https://api.github.com/users/herulume/repos", true);
+	xhr.send(null);
+	xhr.onreadystatechange = function(){
+		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)){
+		  listRepos(xhr.responseText);
+		}
+		else console.log(xhr.status, objectsData);
+	}
+}
+function listRepos(data){
+	var parsedData = JSON.parse(data);
+	// Get data from response to an array
+	for(var i=0; i < parsedData.length; i++){
+		var tmp = {
+			name: parsedData[i].name,
+			isFork: parsedData[i].fork,
+			stars: parsedData[i].stargazers_count,
+			url: parsedData[i].html_url,
+			description: parsedData[i].description
+		};
+		//if(!tmp.isFork)
+			objectsData.push(tmp);
+	}
+	show_page("stars");
+}
+function show_page(srt){
+	if(srt == ""){
+		objectsData.sort(function(a,b){
+		    var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+  			var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+			if(nameA < nameB) return -1;
+			if(nameA >= nameB) return 1;
+		});
+	}
+	if(srt == "stars"){
+		objectsData.sort(function(a,b){
+			if(a.stars < b.stars) return 1;
+			if(a.starts >= b.stars) return -1;
+		});
+	}
+	var ul = document.getElementById('show');
+	ul.innerHTML = "";
+	for(var i = 0; i < objectsData.length; i++){
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		a.href = objectsData[i].url;
+		li.innerHTML = objectsData[i].name + " --> " + objectsData[i].description + " (With " + objectsData[i].stars + " stars)";
+		a.appendChild(li);
+		ul.appendChild(a);
+	}
+}
+</script>
