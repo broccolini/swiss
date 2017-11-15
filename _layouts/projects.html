@@ -20,7 +20,7 @@ layout: default
 var objectsData = [];
 function getRepos(){
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET","https://api.github.com/users/herulume/repos", true);
+	xhr.open("GET","https://api.github.com/users/dunnadan/repos", true);
 	xhr.send(null);
 	xhr.onreadystatechange = function(){
 		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)){
