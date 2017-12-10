@@ -19,58 +19,84 @@ layout: default
 </article>
 
 <script>
-var objectsData = [];
+let objectsData = [];
 function getRepos(){
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET","https://api.github.com/users/dunnadan/repos", true);
-	xhr.send(null);
-	xhr.onreadystatechange = function(){
-		if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)){
-		  listRepos(xhr.responseText);
-		}
-		else console.log(xhr.status, objectsData);
-	}
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET","https://api.github.com/users/dunnadan/repos", true);
+    xhr.send(null);
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)){
+          listRepos(xhr.responseText);
+        }
+        else console.log(xhr.status, objectsData);
+    }
 }
+ 
 function listRepos(data){
-	var parsedData = JSON.parse(data);
-	// Get data from response to an array
-	for(var i=0; i < parsedData.length; i++){
-		var tmp = {
-			name: parsedData[i].name,
-			isFork: parsedData[i].fork,
-			stars: parsedData[i].stargazers_count,
-			url: parsedData[i].html_url,
-			description: parsedData[i].description
-		};
-		//if(!tmp.isFork)
-			objectsData.push(tmp);
-	}
-	show_page("stars");
+    let parsedData = JSON.parse(data);
+    let newUrl = 'cona';
+    // Get data from response to an array
+    for(let i=0; i < parsedData.length; i++){
+        if(parsedData[i].has_pages){
+            newUrl = "/"+parsedData[i].name;
+        } else {
+            newUrl = parsedData[i].html_url;
+        }
+        let tmp = {
+            name: parsedData[i].name,
+            isFork: parsedData[i].fork,
+            stars: parsedData[i].stargazers_count,
+            url: newUrl,
+            description: parsedData[i].description
+        };
+        if(!tmp.isFork || (tmp.isFork && tmp.name == "Nethoven"))
+            objectsData.push(tmp);
+    }
+    for(let i = 0; i<objectsData.length; i++){
+        numCommits(objectsData[i].name,i);
+    }
+    show_page();
 }
-function show_page(srt){
-	if(srt == ""){
-		objectsData.sort(function(a,b){
-		    var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-  			var nameB = b.name.toUpperCase(); // ignore upper and lowercase
-			if(nameA < nameB) return -1;
-			if(nameA >= nameB) return 1;
-		});
-	}
-	if(srt == "stars"){
-		objectsData.sort(function(a,b){
-			if(a.stars < b.stars) return 1;
-			if(a.starts >= b.stars) return -1;
-		});
-	}
-	var ul = document.getElementById('show');
-	ul.innerHTML = "";
-	for(var i = 0; i < objectsData.length; i++){
-		var li = document.createElement('li');
-		var a = document.createElement('a');
-		a.href = objectsData[i].url;
-		li.innerHTML = objectsData[i].name + " --> " + objectsData[i].description + " (With " + objectsData[i].stars + " stars)";
-		a.appendChild(li);
-		ul.appendChild(a);
-	}
+ 
+function numCommits(project, indice) {
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://api.github.com/repos/dunnadan'+project+'/contributors?anon=true');
+    request.send();
+    request.onreadystatechange = function(){
+        if (request.readyState == 4 && (request.status == 200 || request.status == 304)){
+            if(projecto != "dunnadan.github.io"){
+                let n = countCommints(JSON.parse(request.responseText));
+                objectsData[indice].numComits = n;
+                document.getElementById('comits'+project).innerHTML = " #of comits: "+n;
+            }
+        }
+    }
+}
+function show_page(){
+        objectsData.sort(function(a,b){
+            let nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            let nameB = b.name.toUpperCase(); // ignore upper and lowercase
+            if(nameA < nameB) return -1;
+            if(nameA >= nameB) return 1;
+        });
+   
+    let ul = document.getElementById('show');
+    ul.innerHTML = "";
+    for(let i = 0; i < objectsData.length; i++){
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = objectsData[i].url;
+        li.innerHTML = "[*] " + objectsData[i].name;
+        a.appendChild(li);
+        ul.appendChild(a);
+    }
+}
+ 
+function countComits (reponse) {
+    let count = 0;
+    for(let i = 0; i < response.length; i++) {
+        counut += response[i].contributions;
+    }
+    return count;
 }
 </script>
