@@ -16,7 +16,7 @@
 title: Swiss Jekyll Theme
 description: A bold typographic theme inspired by Swiss design.
 baseurl: "/swiss" # the subpath of your site, e.g. /blog
-url: "http://broccolini.net" # the base hostname & protocol for your site
+url: "https://broccolini.net" # the base hostname & protocol for your site
 github_repo: swiss # the GitHub repo name for your project
 github_username: broccolini
 
