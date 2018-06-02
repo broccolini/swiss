@@ -16,7 +16,7 @@
   text-decoration: none !important;
 
   &:hover {
-    text-decoration: no-underline !important;
+    text-decoration: none !important;
   }
 }
 
@@ -173,10 +173,10 @@
 // Link styles for navigation
 .link-primary {
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover {
     color: $color-primary-link;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
