@@ -18,6 +18,14 @@ code {
 
 .prose {
 
+  a {
+    text-decoration: underline dotted;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   p, ol, ul {
     font-size: $prose-font-size;
     margin-bottom: 1em;
