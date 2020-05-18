@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Swiss Jekyll Theme
+title: CS Assignment
 description: A bold typographic theme inspired by Swiss design.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -27,7 +27,7 @@ social_username: jekyllrb
 
 # Set theme color here
 # Choose from: black (default), blue, gray, magenta, orange, red, white, and yellow.
-theme_color: black
+theme_color: blue
 
 # Build settings
 markdown: kramdown
