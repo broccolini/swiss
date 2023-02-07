@@ -1,11 +1,13 @@
 // Styling markdown output
 
 // Code formatting
+@use "sass:math";
+
 pre {
     border-left: $spacer-1 solid $color-border;
     margin: $spacer-3 0;
     padding-left: 16px;
-    width: (9 / 12 * 100%); // matches col-9
+    width: (math.div(9, 12) * 100%); // matches col-9
     overflow-x: auto;
 }
 
@@ -32,7 +34,7 @@ code {
     width: 100%;
 
     @media (min-width: $breakpoint-lg) {
-      width: (10 / 12 * 100%); // matches col-10
+      width: (math.div(10, 12) * 100%); // matches col-10
     }
 
   }
@@ -54,7 +56,7 @@ code {
     max-width: 100%;
 
     @media (min-width: $breakpoint-lg) {
-      max-width: (12 / 10 * 100%); // make image fill width of container on desktop
+      max-width: (12 * 0.1 * 100%); // make image fill width of container on desktop
     }
 
   }
@@ -73,7 +75,7 @@ code {
     @media (min-width: $breakpoint-lg) {
       padding-left: $spacer-3;
       margin: $spacer-4 0 $spacer-4 -40px;
-      max-width: (11 / 10 * 100%);
+      max-width: (11 * 0.1 * 100%);
 
       p {
         font-size: 32px;

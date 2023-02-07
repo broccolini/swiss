@@ -1,4 +1,6 @@
 /* Type utilities */
+@use "sass:math";
+
 .h0 {
   font-size: $h0-mobile;
   line-height: 1.0125;
@@ -51,17 +53,17 @@
 /* Layout utilities */
 .container { max-width: $container-width; }
 
-.col-1 { width: (1 / 12 * 100%); }
-.col-2 { width: (2 / 12 * 100%); }
-.col-3 { width: (3 / 12 * 100%); }
-.col-4 { width: (4 / 12 * 100%); }
-.col-5 { width: (5 / 12 * 100%); }
-.col-6 { width: (6 / 12 * 100%); }
-.col-7 { width: (7 / 12 * 100%); }
-.col-8 { width: (8 / 12 * 100%); }
-.col-9 { width: (9 / 12 * 100%); }
-.col-10 { width: (10 / 12 * 100%); }
-.col-11 { width: (11 / 12 * 100%); }
+.col-1 { width: (math.div(1, 12) * 100%); }
+.col-2 { width: (math.div(2, 12) * 100%); }
+.col-3 { width: (math.div(3, 12) * 100%); }
+.col-4 { width: (math.div(4, 12) * 100%); }
+.col-5 { width: (math.div(5, 12) * 100%); }
+.col-6 { width: (math.div(6, 12) * 100%); }
+.col-7 { width: (math.div(7, 12) * 100%); }
+.col-8 { width: (math.div(8, 12) * 100%); }
+.col-9 { width: (math.div(9, 12) * 100%); }
+.col-10 { width: (math.div(10, 12) * 100%); }
+.col-11 { width: (math.div(11, 12) * 100%); }
 .col-12 { width: 100%; }
 
 @media (max-width: $breakpoint-lg) {
