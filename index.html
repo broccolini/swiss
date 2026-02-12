@@ -1,5 +1,698 @@
----
-layout: home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Neha Balamurugan</title>
+    <link rel="icon" href="favicon.ico" sizes="any"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "matte-white": "#F9F9F7",
+                        "technical-gray": "#7A7A7A",
+                        "accent-red": "#D12B2B",
+                    },
+                    fontFamily: {
+                        "mono": ["JetBrains Mono", "monospace"],
+                        "sans": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+            --bg-grid-color: rgba(0, 0, 0, 0.03);
+            --bg-dot-color: rgba(0, 0, 0, 0.08);
+        }
+        body {
+            background-color: #F9F9F7;
+            transition: none;
+        }
+        .mode-engineering body,
+        .mode-engineering {
+            background-image: linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
+                              linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .mode-research body,
+        .mode-research {
+            background-image: radial-gradient(var(--bg-dot-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .mode-switch-container {
+            border: 1px solid #000;
+            display: inline-flex;
+            background: #000;
+            padding: 2px;
+        }
+        .mode-btn {
+            padding: 4px 12px;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .mode-btn.inactive {
+            background: #000;
+            color: #FFF;
+            opacity: 0.4;
+        }
+        .mode-btn.active {
+            background: #F9F9F7;
+            color: #000;
+        }
+        .mode-research .eng-content { display: none; }
+        .mode-engineering .res-content { display: none; }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-content {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: ticker 180s linear infinite;
+        }
+        .project-card {
+            border: 0.5px solid rgba(0,0,0,0.2);
+            background: white;
+            transition: all 0.2s;
+        }
+        .project-card:hover {
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.05);
+            border-color: #000;
+        }
+        .conference-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .conference-table th {
+            text-align: left;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #000;
+            opacity: 0.5;
+        }
+        .conference-table td {
+            padding: 1rem 0;
+            font-size: 11px;
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="mode-research text-black antialiased font-mono">
 
-<!-- Set title and description in config.yml -->
+<!-- Status Ticker -->
+<div class="fixed bottom-0 left-0 right-0 z-[100] bg-white border-t border-black h-12 flex items-center overflow-hidden">
+    <div class="flex-none px-6 bg-black text-white h-full flex items-center justify-center font-bold text-[10px] tracking-widest z-10">
+        SYSTEM_STATUS // LATEST_LOG
+    </div>
+    <div class="ticker-content flex items-center">
+        <div class="flex items-center gap-16 px-8">
+            <span class="text-[10px] uppercase font-bold tracking-tighter"> I'm exploring direct procurement — super excited about the space and doing lots of research. In the space or know people who are? Shoot me an email.</span>
+        </div>
+        <div class="flex items-center gap-16 px-8">
+            <span class="text-[10px] uppercase font-bold tracking-tighter">INQUIRY_VENTURE // Exploring direct procurement — excited about the space and doing lots of research. In the space or know people who are? Shoot me an email.</span>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-[1400px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-24">
+
+    <!-- Header -->
+    <header class="mb-12 md:mb-16 border-b border-black pb-6 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tighter uppercase">Neha Balamurugan</h1>
+            <p class="eng-content text-[10px] mt-2 tracking-[0.3em] md:tracking-[0.4em] uppercase opacity-60">Systems Engineer / Building Intelligent Systems</p>
+            <p class="res-content text-[10px] mt-2 tracking-[0.3em] md:tracking-[0.4em] uppercase opacity-60">Cognitive AI</p>
+        </div>
+        <div class="flex flex-col items-start md:items-end gap-4">
+            <div class="text-[9px] font-bold tracking-widest opacity-80 uppercase">Mode Select</div>
+            <div class="mode-switch-container">
+                <button class="mode-btn active" id="btn-research">Research</button>
+                <button class="mode-btn inactive" id="btn-engineering">Engineering</button>
+            </div>
+            <div class="flex gap-6 mt-2">
+                <a href="https://github.com/nehabalamurugan" target="_blank" class="text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">[GitHub]</a>
+                <a href="https://www.linkedin.com/in/neha-balamurugan-8455981b1/" target="_blank" class="text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">[LinkedIn]</a>
+                <a href="mailto:nbalamuru@gmail.com" class="text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">[Email]</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16 md:mb-24">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+            <!-- Research Bio -->
+            <div class="res-content mb-12">
+                <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 flex items-center">
+                    <span class="w-2 h-2 bg-black mr-3"></span> About // Profile
+                </h2>
+                <div class="pr-0 lg:pr-12">
+                    <p class="text-lg md:text-xl font-light leading-relaxed mb-6">
+                        Hi, I'm Neha [NAY-ha]. I study how humans and AI systems <span class="font-bold">reason about the world differently</span>, with a focus on visual understanding and social cognition.
+                    </p>
+                    <p class="text-sm leading-relaxed opacity-70 mb-8">
+                        Currently pursuing my MS in Computer Science (AI) at Stanford, working in the Causality and Cognition Lab on visual social reasoning benchmarks.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Human AI Alignment</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Cognitive Science</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Vision-Language Models</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Science Integrity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering Bio -->
+            <div class="eng-content mb-12">
+                <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 flex items-center">
+                    <span class="w-2 h-2 bg-black mr-3"></span> About // Profile
+                </h2>
+                <div class="pr-0 lg:pr-12">
+                    <p class="text-lg md:text-xl font-light leading-relaxed mb-6">
+                        Hi, I'm Neha [NAY-ha]. I build intelligent systems that help people <span class="font-bold">equitably reason, learn, and create</span>.
+                    </p>
+                    <p class="text-sm leading-relaxed opacity-70 mb-8">
+                        I love building AI tools that solve real problems.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">AI Systems</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Fintech</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">Femtech</span>
+                        <span class="text-[9px] font-bold border border-black px-3 py-1 uppercase">VR/AR</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering Timeline -->
+            <div class="eng-content">
+                <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 flex items-center">
+                    <span class="w-2 h-2 bg-black mr-3"></span> Experience // Timeline
+                </h2>
+                <div class="relative ml-2 mb-8">
+                    <div class="absolute left-[7px] top-0 bottom-0 w-[0.5px] bg-black/30"></div>
+                    <div class="space-y-8">
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] bg-black"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">PRESENT</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">&lt;/building&gt;</h3>
+                                <p class="text-[10px] mt-1 opacity-70">Stealth</p>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] border border-black bg-matte-white"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">2025</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">Emerson Collective // Venture</h3>
+                                <p class="text-[10px] mt-1 opacity-70">Explored the software-for-hardware market</p>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] border border-black bg-matte-white"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">2023</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">Checkbook // Software Engineer</h3>
+                                <p class="text-[10px] mt-1 opacity-70">Built fintech infrastructure for digital payments</p>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] border border-black bg-matte-white"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">2022 - 2024</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">Dreamscape Learn // VR Engineer</h3>
+                                <p class="text-[10px] mt-1 opacity-70">Led team building multiplayer VR classrooms deployed to 1,500+ students</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Timeline -->
+            <div class="res-content">
+                <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 flex items-center">
+                    <span class="w-2 h-2 bg-black mr-3"></span> Academic Profile // Timeline
+                </h2>
+                <div class="relative ml-2 mb-8">
+                    <div class="absolute left-[7px] top-0 bottom-0 w-[0.5px] bg-black/30"></div>
+                    <div class="space-y-8">
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] bg-black"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">2024 - 2026</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">Stanford University // MS Computer Science (AI)</h3>
+                                <p class="text-[10px] mt-1 opacity-70">Causality and Cognition Lab / Accel Leadership Scholar</p>
+                                <div class="mt-3 space-y-1">
+                                    <p class="text-[10px] opacity-60">- Developing benchmarks to study visual social reasoning in humans and AI</p>
+                                    <p class="text-[10px] opacity-60">- 1 of 16 students selected for Stanford's flagship entrepreneurship program (ALP)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <div class="absolute left-0 top-1 w-[15px] h-[15px] border border-black bg-matte-white"></div>
+                            <div class="ml-10">
+                                <span class="text-[10px] opacity-40 block mb-1">2021 - 2024</span>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">Arizona State University // BS Computer Science</h3>
+                                <p class="text-[10px] mt-1 font-bold text-accent-red">RANK 1 // CS UNDERGRAD</p>
+                                <div class="mt-3 space-y-1">
+                                    <p class="text-[10px] opacity-60">- Led 10-member team under $500M Dreamscape Learn VR initiative</p>
+                                    <p class="text-[10px] opacity-60">- DAAD RISE Fellow at Humboldt University Berlin</p>
+                                    <p class="text-[10px] opacity-60">- Multiple hackathon wins across education, fintech, and health tech</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Quick Stats -->
+            <div class="res-content grid grid-cols-3 gap-4 md:gap-8 border-t border-black pt-8">
+                <div>
+                    <span class="text-[9px] uppercase opacity-40 block mb-2">Primary Focus</span>
+                    <span class="text-xs font-bold uppercase">Vision-Language Models</span>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase opacity-40 block mb-2">Affiliation</span>
+                    <span class="text-xs font-bold uppercase">Stanford HAI</span>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase opacity-40 block mb-2">Recognition</span>
+                    <span class="text-xs font-bold uppercase">HLF 2025 Scholar</span>
+                </div>
+            </div>
+
+            <!-- Engineering Quick Stats -->
+            <div class="eng-content grid grid-cols-2 gap-4 md:gap-8 border-t border-black pt-8">
+                <div>
+                    <span class="text-[9px] uppercase opacity-40 block mb-2">Primary Focus</span>
+                    <span class="text-xs font-bold uppercase">AI Systems</span>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase opacity-40 block mb-2">Affiliation</span>
+                    <span class="text-xs font-bold uppercase">Stanford University</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="lg:col-span-5 order-1 lg:order-2">
+            <div class="aspect-[4/5] bg-neutral-200 overflow-hidden border border-black grayscale contrast-125 hover:grayscale-0 hover:contrast-100 transition-[filter] duration-500 ease-out cursor-default">
+                <img alt="Neha Balamurugan" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-[filter] duration-500 ease-out" src="images/IMG_0637.JPG"/>
+            </div>
+            <div class="mt-4 flex justify-between items-center text-[10px] uppercase tracking-tighter opacity-50">
+                <span>Scan_ID: NB-001</span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Research Projects Section -->
+    <section class="res-content mb-16 md:mb-24">
+        <div class="border-t border-black pt-12 md:pt-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 flex items-center">
+                <span class="w-2 h-2 bg-black mr-3"></span> Research Archive // Publications
+            </h2>
+            <div class="overflow-x-auto scrollbar-hide -mx-6 md:-mx-12 px-6 md:px-12">
+                <div class="flex gap-6 pb-4" style="min-width: max-content;">
+                    <!-- Spot The Ball -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">ID: RES-2025-001</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">Spot The Ball: Visual Social Reasoning Benchmark</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">Developed a benchmark measuring how humans and AI infer hidden information in sports scenes. Evaluated frontier VLMs to study human-AI reasoning gaps.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">VLM</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">COGNITIVE</span>
+                            </div>
+                            <a class="text-[10px] font-bold underline" href="https://arxiv.org/abs/2511.00261" target="_blank">[ArXiv]</a>
+                        </div>
+                    </div>
+
+                    <!-- Dreamscape VR -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">ID: RES-2024-002</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">Dreamscape Learn VR Education</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">Led 10-member team under $500M initiative to create multiplayer VR classrooms. Built interactive visualizations deployed to 1,500+ students.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">VR</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">UNITY</span>
+                            </div>
+                            <a class="text-[10px] font-bold underline" href="https://doi.org/10.1007/978-3-031-80475-5_14" target="_blank">[ILRN 2024]</a>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[9px] font-bold bg-black text-white px-2 py-1">GCSP AWARD 5X</span>
+                        </div>
+                    </div>
+
+                    <!-- AR Driver Safety -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">ID: RES-2023-003</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">AR Driver Safety System</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">DAAD RISE Fellowship: Designed AR heads-up displays to reduce driver distraction using CARLA simulations, eye-tracking, and HoloLens experiments.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">AR</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">HOLOLENS</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[9px] font-bold bg-black text-white px-2 py-1">BARRETT HALL OF FAME</span>
+                        </div>
+                    </div>
+
+                    <!-- buff AI -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">ID: RES-2024-004</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">buff: AI for Scientific Research</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">Undergraduate thesis: AI framework combining LLMs, citation graph analysis, and modular retrieval pipelines to accelerate scientific discovery.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">LLM</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">RAG</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fluid Dynamics -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">ID: RES-2022-005</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">Fluid Dynamics Visualization in VR</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">NSF REU: Built interactive VR systems for exploring large-scale fluid simulations, improving real-time rendering speed by 45%.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">VR</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">GPU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Projects Section -->
+    <section class="eng-content mb-16 md:mb-24">
+        <div class="border-t border-black pt-12 md:pt-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 flex items-center">
+                <span class="w-2 h-2 bg-black mr-3"></span> Engineering Archive // Systems Built
+            </h2>
+            <div class="overflow-x-auto scrollbar-hide -mx-6 md:-mx-12 px-6 md:px-12">
+                <div class="flex gap-6 pb-4" style="min-width: max-content;">
+                    <!-- Recall -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">HACK: CALHACKS-25</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">Recall: Wearable Conversation Recorder</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">Raspberry Pi wearable with voice detection, FaceNet embeddings, Gemini transcription, and Supabase storage for natural-language search.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">HARDWARE</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">AI</span>
+                            </div>
+                            <a class="text-[10px] font-bold underline" href="https://devpost.com/software/sd-32s1zj" target="_blank">[Devpost]</a>
+                        </div>
+                    </div>
+
+                    <!-- YouCare -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">HACK: TREEHACKS-23</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">YouCare: Women's Wellness Forecasting</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">iOS app for personalized health analysis using Apple HealthKit and You.com AI search platform for women's wellness tracking.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">SWIFT</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">iOS</span>
+                            </div>
+                            <a class="text-[10px] font-bold underline" href="https://devpost.com/software/youcare-sjaovm" target="_blank">[Devpost]</a>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[9px] font-bold bg-accent-red text-white px-2 py-1">BEST OPEN PLATFORM</span>
+                        </div>
+                    </div>
+
+                    <!-- SusProduce -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">HACK: HACKMIT-23</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">SusProduce: Food Usability AI</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">ML image detection using Keras to assess food usability past expiration. Angular frontend for intelligent food waste reduction.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">ML</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">KERAS</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[9px] font-bold bg-accent-red text-white px-2 py-1">BEST SOLUTION CPG</span>
+                        </div>
+                    </div>
+
+                    <!-- CareUp -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">HACK: H4H-23</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">CareUp: Disability Caretaker Assistant</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">AI-powered app that finds, compiles, and ranks resources for elderly/disordered family members and assists with form completion.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">AI</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">HEALTH</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[9px] font-bold bg-accent-red text-white px-2 py-1">1ST PLACE</span>
+                        </div>
+                    </div>
+
+                    <!-- Althea -->
+                    <div class="project-card p-6 md:p-8 w-80 md:w-96 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-4">HACK: TREEHACKS-24</span>
+                        <h4 class="text-base md:text-lg font-bold uppercase mb-4 leading-tight">Althea: AI Research Agent</h4>
+                        <p class="text-xs leading-relaxed opacity-70 mb-6">Research assistant for literature reviews fine-tuned on ~500 biochemistry papers with citation network integration and semantic chunking.</p>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">LLM</span>
+                                <span class="text-[9px] font-bold border border-black px-2 py-0.5">RAG</span>
+                            </div>
+                            <a class="text-[10px] font-bold underline" href="https://devpost.com/software/athena-eq5ba8" target="_blank">[Devpost]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH: Conferences Section -->
+    <section class="res-content mb-16 md:mb-24">
+        <div class="border-t border-black pt-12 md:pt-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 flex items-center">
+                <span class="w-2 h-2 border border-black mr-3"></span> Conference_Log // Engagements
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="conference-table min-w-full">
+                    <thead>
+                        <tr>
+                            <th class="pr-4">Ref_ID</th>
+                            <th class="pr-4">Venue</th>
+                            <th class="pr-4">Year</th>
+                            <th class="pr-4">Engagement_Type</th>
+                            <th class="hidden md:table-cell">Topic_Node</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="opacity-40 pr-4">CONF-COGSCI-26</td>
+                            <td class="font-bold pr-4">CogSci // Cognitive Science Society</td>
+                            <td class="pr-4">2026</td>
+                            <td class="pr-4"><span class="px-2 py-1 bg-black text-white text-[9px] uppercase">Presenter</span></td>
+                            <td class="opacity-70 italic hidden md:table-cell">Visual Social Reasoning in VLMs</td>
+                        </tr>
+                        <tr>
+                            <td class="opacity-40 pr-4">CONF-HLF-25</td>
+                            <td class="font-bold pr-4">HLF // Heidelberg Laureate Forum</td>
+                            <td class="pr-4">2025</td>
+                            <td class="pr-4"><span class="px-2 py-1 bg-accent-red text-white text-[9px] uppercase">Scholar</span></td>
+                            <td class="opacity-70 italic hidden md:table-cell">Cross-disciplinary AI Ethics</td>
+                        </tr>
+                        <tr>
+                            <td class="opacity-40 pr-4">CONF-ILRN-24</td>
+                            <td class="font-bold pr-4">iLRN // Immersive Learning Research Network</td>
+                            <td class="pr-4">2024</td>
+                            <td class="pr-4"><span class="px-2 py-1 bg-black text-white text-[9px] uppercase">Publication</span></td>
+                            <td class="opacity-70 italic hidden md:table-cell">VR Education Systems</td>
+                        </tr>
+                        <tr>
+                            <td class="opacity-40 pr-4">CONF-DAAD-23</td>
+                            <td class="font-bold pr-4">DAAD RISE // German Academic Exchange</td>
+                            <td class="pr-4">2023</td>
+                            <td class="pr-4"><span class="px-2 py-1 border border-black text-[9px] uppercase">Fellow</span></td>
+                            <td class="opacity-70 italic hidden md:table-cell">AR Driver Safety HCI</td>
+                        </tr>
+                        <tr>
+                            <td class="opacity-40 pr-4">CONF-FORGE-24</td>
+                            <td class="font-bold pr-4">ASU Fulton Forge // Research Symposium</td>
+                            <td class="pr-4">2022-24</td>
+                            <td class="pr-4"><span class="px-2 py-1 border border-black text-[9px] uppercase">Poster</span></td>
+                            <td class="opacity-70 italic hidden md:table-cell">Dreamscape VR Research</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENGINEERING: Course Projects -->
+    <section class="eng-content mb-16 md:mb-24">
+        <div class="border-t border-black pt-12 md:pt-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 flex items-center">
+                <span class="w-2 h-2 border border-black mr-3"></span> Course Projects // Academic Work
+            </h2>
+            <div class="overflow-x-auto scrollbar-hide -mx-6 md:-mx-12 px-6 md:px-12">
+                <div class="flex gap-6 pb-4" style="min-width: max-content;">
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">CS238 // FALL 2024</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Lunar Surface Navigation under Low Visibility</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">QMDP-based decision-making for lunar rover navigation, achieving 100% success in dense environments.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">RL</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">POMDP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">NLP // WINTER 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Temporal Sense of Large Language Models</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Studied how LLMs represent time using modified TOT-Semantic benchmark with linguistic noise.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">LLM</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">TEMPORAL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">GRAPHICS // WINTER 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Volumetric Rendering in Ray Tracer</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Physically based volumetric rendering simulating absorption, scattering in fog/smoke media.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">GRAPHICS</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">RAYTRACING</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">DEEP RL // SPRING 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Test-Time Prompt Compression for SLMs</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Hierarchical framework using Gemma 12B for planning and Qwen2.5-0.5B for generation.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">RAG</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">RL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">VCS // SPRING 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">DSPy: ContextSeeker Module</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">DSPy module enabling LLMs to ask clarifying follow-up questions for underspecified tasks.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">DSPY</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">HITL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">GNN // FALL 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Aircraft Fuel Efficiency with GNNs</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Graph Neural Network predicting fuel consumption using spatiotemporal flight trajectory data.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">GNN</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">AVIATION</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card p-6 w-72 md:w-80 flex-shrink-0">
+                        <span class="text-[9px] opacity-40 block mb-2">AI4OPT // FALL 2025</span>
+                        <h4 class="text-sm font-bold uppercase mb-3">Primal Heuristics for NN Verification</h4>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Differentiable integer linear optimization for neural network verification without supervision.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">MILP</span>
+                            <span class="text-[8px] font-bold border border-black px-2 py-0.5">NNV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENGINEERING: Podcast & Blog Section -->
+    <section class="eng-content mb-16 md:mb-24">
+        <div class="border-t border-black pt-12 md:pt-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 flex items-center">
+                <span class="w-2 h-2 bg-black mr-3"></span> Content // Media & Writing
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Podcast Card -->
+                <a href="https://podcasts.apple.com/us/podcast/second-order/id1817706712" target="_blank" class="border border-black p-8 bg-black text-white flex flex-col justify-center items-center text-center min-h-[200px] hover:shadow-[12px_12px_0px_rgba(0,0,0,0.1)] transition-all group">
+                    <span class="material-symbols-outlined mb-4 text-4xl">podcasts</span>
+                    <h4 class="text-lg font-bold uppercase tracking-widest mb-2">Second Order</h4>
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-80">Podcast</span>
+                    <p class="text-[9px] opacity-50 mt-4 uppercase tracking-tighter max-w-[280px]">Mental models for entrepreneurship & leadership. Guests include Elad Gil.</p>
+                    <span class="text-[10px] font-bold uppercase mt-4 group-hover:underline">[Listen Now]</span>
+                </a>
+
+                <!-- Blog Card -->
+                <a href="https://nehabalamurugan.substack.com/" target="_blank" class="border border-black p-8 bg-black text-white flex flex-col justify-center items-center text-center min-h-[200px] hover:shadow-[12px_12px_0px_rgba(0,0,0,0.1)] transition-all group">
+                    <span class="material-symbols-outlined mb-4 text-4xl">edit_note</span>
+                    <h4 class="text-lg font-bold uppercase tracking-widest mb-2">Thoughts & Essays</h4>
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-80">Substack</span>
+                    <p class="text-[9px] opacity-50 mt-4 uppercase tracking-tighter max-w-[280px]">Essays on technology, startups, and the intersection of AI and society.</p>
+                    <span class="text-[10px] font-bold uppercase mt-4 group-hover:underline">[Read Now]</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 md:mt-24 pb-16 md:pb-32 flex flex-col md:flex-row md:justify-between md:items-start text-[9px] uppercase tracking-[0.2em] opacity-40 border-t border-black/10 pt-8 md:pt-12 gap-4">
+        <div>
+            &copy; 2025 N. BALAMURUGAN<br/>
+            EST. PALO ALTO, CA // <span class="eng-content">ENGINEERING_INDEX</span><span class="res-content">RESEARCH_ARCHIVE</span>
+        </div>
+        <div class="md:text-right">
+            <a href="mailto:nbalamuru@gmail.com" class="block hover:opacity-100 transition-opacity">nbalamuru@gmail.com</a>
+            <span class="block mt-1">STANFORD, CA</span>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const researchBtn = document.getElementById('btn-research');
+    const engineeringBtn = document.getElementById('btn-engineering');
+
+    researchBtn.addEventListener('click', () => {
+        researchBtn.className = 'mode-btn active';
+        engineeringBtn.className = 'mode-btn inactive';
+        document.body.className = 'mode-research text-black antialiased font-mono';
+    });
+
+    engineeringBtn.addEventListener('click', () => {
+        engineeringBtn.className = 'mode-btn active';
+        researchBtn.className = 'mode-btn inactive';
+        document.body.className = 'mode-engineering text-black antialiased font-mono';
+    });
+</script>
+
+</body>
+</html>
